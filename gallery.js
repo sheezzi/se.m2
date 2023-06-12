@@ -112,6 +112,10 @@
   } else if (name === "ANAS MUNEER ALVI") {
     window.location.href = "alvi.html";
   }
+    else if (name === "MOHAMMAD SALEM") {
+    window.location.href = "salim.html";
+  }
+
 
 
     // Add more conditions for other names if needed
