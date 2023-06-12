@@ -51,7 +51,7 @@
 { name: "Syed Umar Ali", cnic: "S23BSEEN1M01080", 
     filename: "shah.html" },
 { name: "Muhammad Waleed", cnic: "S23BSEEN1M01123", 
-    filename: "waqas.html" },
+    filename: "waleed.html" },
 { name: "Muhammad yasir", cnic: "S23BSEEN1M0----", 
     filename: "yasir.html" },
 { name: "Jafar Ali", cnic: "S23BSEEN1M01112", 
