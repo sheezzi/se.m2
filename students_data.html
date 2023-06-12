@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student List</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 50px;
+      color: black;
+    }
+
+    .search-input {
+      width: 100%;
+      max-width: 300px;
+      padding: 5px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      color: #333;
+    }
+
+    .student-table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .student-table th,
+    .student-table td {
+      padding: 10px;
+      text-align: left;
+
+    }
+
+    .student-table th {
+      background-color: royalblue;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .student-table td.name {
+      font-weight: bold;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .student-table td.city {
+      color: yellow;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .student-table td.roll {
+      color: yellow;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .student-table tr:hover {
+      background-color: gray;
+    }
+
+    #h1 {
+      color: red;
+      text-align: center;
+      background-color: black;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    #search {
+      background-color: green;
+      font-size: 20px;
+      color: white;
+    }
+    #bd {
+  background-image: url('website_images/red.jpg');
+  background-size: cover;
+  background-position: fixed;
+}
+
+/* Add media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+  #bd {
+    background-size: contain;
+  }
+}
+
+    /* Footer section styling */
+    footer {
+      background: #111;
+      padding: 15px 23px;
+      color: #fff;
+      text-align: center;
+    }
+
+    footer span a {
+      color: crimson;
+      text-decoration: none;
+    }
+
+    footer span a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 768px) {
+      .search-input {
+        width: 100%;
+        max-width: none;
+      }
+
+      .student-table td.name,
+      .student-table td.city,
+      .student-table td.roll {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body id="bd">
+<h1 id="h1">SOFTWARE ENGINEERS (M2)</h1>
+<div class="container">
+  <input type="text" id="search" class="search-input" oninput="filterStudents()" placeholder="Enter Roll No, Name, or City">
+
+  <table class="student-table">
+    <thead>
+    <tr>
+      <th>ROLL NO</th>
+      <th>NAME</th>
+      <th>CITY</th>
+    </tr>
+    </thead>
+    <tbody class="student-list">
+    
+   <tr class="student-item" onclick="window.location.href = 'qayyum.html';">
+        <td class="roll">S23BSEEN1M01076</td>
+        <td class="name">Abdul Qayyum</td>
+        <td class="city">Bahawalpur</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'hafeez.html';">
+        <td class="roll">S23BSEEN1M01077</td>
+        <td class="name">Muhammad Hafeez</td>
+        <td class="city">Hasilpur</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'hanzala.html';">
+        <td class="roll">S23BSEEN1M01078</td>
+        <td class="name">Muhammad Hanzala</td>
+        <td class="city">Khanpur</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01079</td>
+        <td class="name">Huzaifa Javed</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'shah.html';">
+        <td class="roll">S23BSEEN1M01080</td>
+        <td class="name">Syed Umar Ali</td>
+        <td class="city">Haroonabad</td>
+    </tr>
+       <tr class="student-item" onclick="window.location.href = 'ahmad.html';">
+        <td class="roll">S23BSEEN1M01081</td>
+        <td class="name">Muhammad Ahmad</td>
+        <td class="city">Shorkot</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01082</td>
+        <td class="name">Hammad Ali</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01083</td>
+        <td class="name">Numan Akram</td>
+        <td class="city">Unknown</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'aryan.html';">
+        <td class="roll">S23BSEEN1M01084</td>
+        <td class="name">Abdullah Khurshid</td>
+        <td class="city">Bahawalpur</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'abdullah.html';">
+        <td class="roll">S23BSEEN1M01085</td>
+        <td class="name">Rana Muhammad Abdullah</td>
+        <td class="city">Bahawalpur</td>
+    </tr>
+   <tr class="student-item" onclick="window.location.href = 'nouman.html';">
+        <td class="roll">S23BSEEN1M01086</td>
+        <td class="name">Muhammad Nouman Saeed</td>
+        <td class="city">Hasilpur</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01087</td>
+        <td class="name">Ahmed Ayaz</td>
+        <td class="city">Unknown</td>
+    </tr>
+   <tr class="student-item" onclick="window.location.href = 'abrehman2.html';">
+        <td class="roll">S23BSEEN1M01088</td>
+        <td class="name">Abdul Rehman</td>
+        <td class="city">Pakpattan</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01089</td>
+        <td class="name">Muneeb Rehman</td>
+        <td class="city">Unknown</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'abrehman.html';">
+        <td class="roll">S23BSEEN1M01090</td>
+        <td class="name">Abdul Rehman</td>
+        <td class="city">Chistian</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01091</td>
+        <td class="name">Mohammad Arslan</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01092</td>
+        <td class="name">Muhammad Ahmad</td>
+        <td class="city">Unknown</td>
+    </tr>
+   <tr class="student-item" onclick="window.location.href = 'ahsan.html';">
+        <td class="roll">S23BSEEN1M01093</td>
+        <td class="name">Ahsan Abdullah</td>
+        <td class="city">Bahawalpur</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'daim.html';">
+        <td class="roll">S23BSEEN1M01094</td>
+        <td class="name">Muhammad Daim</td>
+        <td class="city">Hasilpur</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'waqas.html';">
+        <td class="roll">S23BSEEN1M01095</td>
+        <td class="name">Muhammad Waqas</td>
+        <td class="city">Lodhran</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01096</td>
+        <td class="name">Muhammad Arslan</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01097</td>
+        <td class="name">Amna Afzal</td>
+        <td class="city">Unknown</td>
+    </tr>
+   <tr class="student-item" onclick="window.location.href = 'abid.html';">       
+        <td class="roll">S23BSEEN1M01098</td>
+        <td class="name">Muhammad Abid Raza</td>
+        <td class="city">Chichawatni</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01099</td>
+        <td class="name">Junaid Saleem</td>
+        <td class="city">Unknown</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'hassan.html';">
+        <td class="roll">S23BSEEN1M01100</td>
+        <td class="name">Muhammad Hasan</td>
+        <td class="city">Mianwali</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01101</td>
+        <td class="name">Hiba Akram</td>
+        <td class="city">Unknown</td>
+    </tr>
+   <tr class="student-item" onclick="window.location.href = 'Vinod.html';">
+        <td class="roll">S23BSEEN1M01102</td>
+        <td class="name">Vinod Kumar</td>
+        <td class="city">Ghotki</td>
+    </tr>
+      <tr class="student-item" onclick="window.location.href = 'rehan.html';">
+        <td class="roll">S23BSEEN1M01103</td>
+        <td class="name">Muhammad Rehan Saleem</td>
+        <td class="city">Liaqutapur</td>
+    </tr>
+  <tr class="student-item" onclick="window.location.href = 'saqib.html';">
+        <td class="roll">S23BSEEN1M01104</td>
+        <td class="name">Muhammad Saqib</td>
+        <td class="city">Bahawalnagar</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01105</td>
+        <td class="name">Bushra Jafar</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01106</td>
+        <td class="name">Muhammad Ahmad</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01107</td>
+        <td class="name">Muhammad Ahmad Mubarak</td>
+        <td class="city">Unknown</td>
+    </tr>
+  <tr class="student-item" onclick="window.location.href = 'raheel.html';">
+        <td class="roll">S23BSEEN1M01108</td>
+        <td class="name">Muhammad Raheel Ahmed</td>
+        <td class="city">Bahawalpur</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01109</td>
+        <td class="name">Bushra Hafeez</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'abmumtaz.html';">
+        <td class="roll">S23BSEEN1M01110</td>
+        <td class="name">Abdullah Mumtaz</td>
+        <td class="city">Liaqutapur</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'aqeel.html';">
+        <td class="roll">S23BSEEN1M01111</td>
+        <td class="name">Aqeel Ur Rehman</td>
+        <td class="city">Unknown</td>
+    </tr>
+     <tr class="student-item" onclick="window.location.href = 'jafar.html';">
+        <td class="roll">S23BSEEN1M01112</td>
+        <td class="name">Jafar Ali</td>
+        <td class="city">Astore</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01113</td>
+        <td class="name">Ishrat Fatima</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item">
+        <td class="roll">S23BSEEN1M01114</td>
+        <td class="name">Ghazanfar Ali</td>
+        <td class="city">Unknown</td>
+    </tr>
+    <tr class="student-item" onclick="window.location.href = 'awais.html';">
+        <td class="roll">S23BSEEN1M01115</td>
+        <td class="name">Muhammad Awais</td>
+        <td class="city">Sadiqabad</td>
+    </tr>
+       <tr class="student-item" onclick="window.location.href = 'Sheezzi.html';">
+        <td class="roll">S23BSEEN1M01116</td>
+        <td class="name">Shahzad Nawaz</td>
+        <td class="city">Jampur</td>
+    </tr>
+        <tr class="student-item" onclick="window.location.href = 'aliraza.html';">
+            <td class="roll">S23BSEEN1M01117</td>
+            <td class="name">Ali Raza</td>
+            <td class="city">Dunyapur</td>
+        </tr>
+        <tr class="student-item" onclick="window.location.href = 'fawad.html';">
+            <td class="roll">S23BSEEN1M01118</td>
+            <td class="name">Fawad Ur Rehman</td>
+            <td class="city">Harooabad</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01119</td>
+            <td class="name">Muhammad Zeshan Aslam</td>
+            <td class="city">Unknown</td>
+        </tr>
+           <tr class="student-item" onclick="window.location.href = 'masood.html';">
+            <td class="roll">S23BSEEN1M01120</td>
+            <td class="name">Ghulam Masood</td>
+            <td class="city">Jahaniah</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01121</td>
+            <td class="name">Abdul Hanan</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01122</td>
+            <td class="name">Anus Laique</td>
+            <td class="city">Unknown</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'waleed.html';">
+            <td class="roll">S23BSEEN1M01123</td>
+            <td class="name">Muhammad Waleed</td>
+            <td class="city">Wasanday wali</td>
+        </tr>
+        <tr class="student-item" onclick="window.location.href = 'fahad.html';">
+            <td class="roll">S23BSEEN1M01124</td>
+            <td class="name">Fahad Ilyas</td>
+            <td class="city">Fazilpur</td>
+        </tr>
+       <tr class="student-item" onclick="window.location.href = 'fakhir.html';">
+            <td class="roll">S23BSEEN1M01125</td>
+            <td class="name">Fakhir-e-Muhammad</td>
+            <td class="city">Bahawalpur</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01126</td>
+            <td class="name">Muhammad Danish</td>
+            <td class="city">Unknown</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'faraz.html';">
+            <td class="roll">S23BSEEN1M01127</td>
+            <td class="name">Muhammad Faraz</td>
+            <td class="city">Bahawalpur
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01128</td>
+            <td class="name">Abdullah Abid</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item" onclick="window.location.href = 'muzamil.html';">
+            <td class="roll">S23BSEEN1M01129</td>
+            <td class="name">Muzamal Farooq</td>
+            <td class="city">Marot</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'naseer.html';">
+            <td class="roll">S23BSEEN1M01130</td>
+            <td class="name">Muhammad Naseer Ahmad</td>
+            <td class="city">Mianchanu</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01133</td>
+            <td class="name">Asma Farooq</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01134</td>
+            <td class="name">Qaisar Ali</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01135</td>
+            <td class="name">Sana Zahid</td>
+            <td class="city">Unknown</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'arslan.html';">
+            <td class="roll">S23BSEEN1M01136</td>
+            <td class="name">Arslan Sarwar</td>
+            <td class="city">Mailsi</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01137</td>
+            <td class="name">Fatima Malik</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01138</td>
+            <td class="name">Sumyan Yasir</td>
+            <td class="city">Unknown</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'mohsin.html';">
+            <td class="roll">S23BSEEN1M01139</td>
+            <td class="name">Mohsin Ali</td>
+            <td class="city">Yazman</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01140</td>
+            <td class="name">Farah Khan</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1M01141</td>
+            <td class="name">Muhammad Ali</td>
+            <td class="city">Unknown</td>
+        </tr>
+      <tr class="student-item" onclick="window.location.href = 'mubeen.html';">
+    <td class="roll">S23BSEEN1M01142</td>
+    <td class="name">Mubeen Abbas</td>
+    <td class="city">Khanpur</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01143</td>
+    <td class="name">Mazar Abbas</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01144</td>
+    <td class="name">Salman Ahmad</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01145</td>
+    <td class="name">M Yasir</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01146</td>
+    <td class="name">Hira Rehman</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01147</td>
+    <td class="name">Masood Ahmad</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item" onclick="window.location.href = 'alvi.html';">
+    <td class="roll">S23BSEEN1M01148</td>
+    <td class="name">Anas Muneer Alvi</td>
+    <td class="city">Rahimyar khan</td>
+</tr>
+<tr class="student-item" onclick="window.location.href = 'ibrar.html';">
+    <td class="roll">S23BSEEN1M01149</td>
+    <td class="name">M Ibrar Zafar</td>
+    <td class="city">Hasilpur</td>
+</tr>
+ <tr class="student-item" onclick="window.location.href = 'samiullah.html';">
+    <td class="roll">S23BSEEN1M01151</td>
+    <td class="name">Samiullah</td>
+    <td class="city">Shorkot</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01152</td>
+    <td class="name">Zeeshan Haider</td>
+    <td class="city">Unknown</td>
+</tr>
+<tr class="student-item">
+    <td class="roll">S23BSEEN1M01154</td>
+    <td class="name">Adnan Shakoor</td>
+    <td class="city">Unknown</td>
+</tr>
+    <tr class="student-item">
+            <td class="roll">S23BSEEN1E02005</td>
+            <td class="name">Muhammad Ahmad</td>
+            <td class="city">Unknown</td>
+        </tr>
+        <tr class="student-item">
+            <td class="roll">S23BSEEN1E02016</td>
+            <td class="name">Masood Ahmad</td>
+            <td class="city">Unknown</td>
+        </tr>
+       <tr class="student-item" onclick="window.location.href = 'bashar.html';">
+            <td class="roll">S23BSEEN1E0----</td>
+            <td class="name">BASHAR AHMED</td>
+            <td class="city">AL-DHALEA (YAMEN)</td>
+        </tr>
+         <tr class="student-item" onclick="window.location.href = 'salim.html';">
+            <td class="roll">S23BSEEN1E0----</td>
+            <td class="name">Mohammad Salem</td>
+            <td class="city">Yamen(foreigner)</td>
+        </tr>
+     <!-- add more students-->
+      
+    </tbody>
+  </table>
+</div>
+
+<!-- JavaScript code for filtering students -->
+<script>
+  function filterStudents() {
+    var searchInput = document.getElementById("search").value.toLowerCase();
+    var studentList = document.getElementsByClassName("student-list")[0];
+    var students = studentList.getElementsByClassName("student-item");
+
+    for (var i = 0; i < students.length; i++) {
+      var roll = students[i].getElementsByClassName("roll")[0].textContent.toLowerCase();
+      var name = students[i].getElementsByClassName("name")[0].textContent.toLowerCase();
+      var city = students[i].getElementsByClassName("city")[0].textContent.toLowerCase();
+
+      if (roll.startsWith(searchInput) || name.startsWith(searchInput) || city.startsWith(searchInput)) {
+        students[i].style.display = "table-row";
+      } else {
+        students[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+<!-- Footer section -->
+<footer>
+  <span>Created By <a href="https://shorturl.at/ekwQ1" target="_blank">Sheezzi</a> | &copy; 2023 All rights reserved.</span>
+</footer>
+</body>
+</html>
