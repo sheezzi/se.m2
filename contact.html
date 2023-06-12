@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("bg.png") no-repeat center center/cover;
+}
+
+form {
+    width: 100%;
+    max-width: 670px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+}
+
+#pl{
+    background-color: transparent;
+    color: yellow;
+    font-weight: bolder;
+}
+
+h1 {
+    color: blue;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+    background-color: none;
+}
+
+input,
+textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    font-size: 19px;
+    background: pink;
+    border-bottom: 2px solid #fff;
+    color: black;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: black;
+    font-size: 19px;
+}
+
+h3 {
+    color: gold;
+    font-weight: 300;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+textarea {
+    font-weight: 200;
+    font-size: 19px;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+button {
+    border: none;
+    background: yellow;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    padding: 10px 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+/* footer section styling */
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: crimson;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    input,
+    textarea {
+        max-width: 100%;
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <form id="contactForm">
+            <h1 id="pl">FEEL FREE TO ASK ANY QUERY!</h1>
+            <h1 id="pl">Contact Us</h1><br><br>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="mobile" placeholder="Mobile" required>
+            <h3>Type Your Message Here...</h3>
+            <textarea id="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer>
+        <span>Created By <a href="https://shorturl.at/ekwQ1" target="_blank">Sheezzi</a> | &copy; 2023 All rights reserved.</span>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', handleSubmit);
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappNumber = '+923376102787';
+            const whatsappMessage = `Name: ${firstName} ${lastName}%0AEmail: ${email}%0AMobile: ${mobile}%0AMessage: ${message}`;
+
+            window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${whatsappMessage}`);
+        }
+    </script>
+</body>
+</html>

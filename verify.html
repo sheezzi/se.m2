@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: red;
+      font-size: 24px;
+    }
+
+    p {
+      color: blue;
+      font-size: 18px;
+    }
+
+    #errorMessage {
+      color: red;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Add responsive CSS styles */
+    @media only screen and (max-width: 600px) {
+      /* Styles for devices with a maximum width of 600px */
+      .modal-content {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      /* Adjust other styles as needed */
+    }
+
+    /* footer section styling */
+    footer {
+      background: #111;
+      padding: 15px 23px;
+      color: #fff;
+      text-align: center;
+    }
+
+    footer span a {
+      color: crimson;
+      text-decoration: none;
+    }
+
+    footer span a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Add HTML for the modal -->
+  <div id="verificationModal" class="modal">
+    <div class="modal-content">
+      <h2>PROVE YOUR IDENTITY</h2>
+      <p>This menu is for verified person.<br>You cannot access it until you prove your identity.<br>Please answer these questions first to gain access to this menu.</p><br>
+      <input type="text" id="answer1" placeholder="WHO IS OUR C-R? (First name)"><br><br>
+      <input type="text" id="answer2" placeholder="WHO IS OUR G-R? (First name)"><br><br>
+      <button onclick="checkIdentity()">Verify</button> <br><br><br><br>
+      <div id="errorMessage"></div> <!-- New div for error message -->
+    </div>
+  </div>
+
+  <!-- Your remaining HTML content -->
+
+  <script>
+    function verifyIdentity() {
+      var isVerified = localStorage.getItem("isVerified");
+
+      if (isVerified === "true") {
+        window.location.href = "students_data.html";
+      } else {
+        var modal = document.getElementById("verificationModal");
+        modal.style.display = "block";
+      }
+    }
+
+    function checkIdentity() {
+      var answer1 = document.getElementById("answer1").value;
+      var answer2 = document.getElementById("answer2").value;
+
+      // Convert user's input and expected answers to lowercase
+      var userAnswer1 = answer1.toLowerCase();
+      var userAnswer2 = answer2.toLowerCase();
+      var expectedAnswer1 = "Rehan".toLowerCase();
+      var expectedAnswer2 = "Bushra".toLowerCase();
+
+      if (userAnswer1 === expectedAnswer1 && userAnswer2 === expectedAnswer2) {
+        localStorage.setItem("isVerified", "true");
+        window.location.href = "students_data.html";
+      } else {
+        var errorMessage = document.getElementById("errorMessage");
+        errorMessage.textContent = "⚠️ Sorry, you are not recognized as a class fellow. ⚠️";
+      }
+    }
+
+    // Check if already verified and redirect
+    verifyIdentity();
+  </script>
+
+  <!-- footer section start -->
+  <footer>
+    <span>Created By <a href="https://shorturl.at/ekwQ1" target="blank">Sheezzi</a> | <span class="far fa-copyright"></span>
+      2023 All rights reserved.</span>
+  </footer>
+  <!-- end footer section -->
+</body>
+</html>

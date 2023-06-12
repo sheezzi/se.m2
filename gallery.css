@@ -1,0 +1,126 @@
+#h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: blue;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #h1 {
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
+#bg {
+  background-image: url('website_images/background_data.jpg');
+  background-color: gray;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -10px; /* Adjust the negative margin to your preference */
+}
+
+.gallery-item {
+  margin: 10px;
+  border: 1px solid #ccc;
+  width: calc(200px - 20px); /* Subtract the total margin (left + right) from the desired width */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.full-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-view img {
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.full-view p {
+  color: yellow;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.full-view .controls {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.full-view .controls a,
+.full-view .controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.full-view .controls button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+footer a {
+  color: yellow;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .gallery-item {
+    margin: 5px;
+  }
+
+  .gallery-item img {
+    max-width: 100%;
+  }
+
+  .full-view img {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+
+  .full-view p {
+    font-size: 16px;
+  }
+
+  .full-view .controls button {
+    padding: 8px 15px;
+  }
+}
