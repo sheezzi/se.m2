@@ -84,6 +84,8 @@
     filename:"ahmad.html"},
 { name: "Anas Muneer Alvi", cnic: "S23BSEEN1M01148",
     filename:"alvi.html"},
+{ name: "Mohammad salem", cnic: "S23BSEEN1M0----",
+    filename:"salim.html"},
 
     // Add more classmates here...
 
