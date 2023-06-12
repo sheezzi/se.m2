@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS for the table and profile picture */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('website_images/background_data.jpg'); /* Replace with your beautiful background image */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    
+    table {
+      width: 80%;
+      margin: 50px auto;
+      border-collapse: collapse;
+      border: 2px solid black;
+      border-radius: 10px;
+      background-color: rgba(30, 0, 0, 0.7);
+    }
+    
+    th, td {
+      padding: 10px;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+      color: #333;
+    }
+    
+    #profile-container {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px auto;
+      position: relative;
+    }
+    
+   #profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+#profile-pic:hover {
+  transform: scale(1.2);
+  filter: brightness(50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: black;
+}
+
+
+    #download-btn {
+  display: block;
+  font-size: 18px;
+  width: 150px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+   font-style: bold;
+}
+
+#download-btn:hover {
+  background-color: blue;
+  color: black;
+  font-style: bold;
+}
+
+    #h{
+    color: blue;
+   
+    }
+
+    /* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+    
+  </style>
+</head>
+<body>
+  <div id="profile-container">
+    <a href="user_images/aqeel.jpg"><img id="profile-pic" src="user_images/aqeel.jpg" alt="Profile Picture"></a>
+  </div>
+  <center><h1 id="h">AQEEL UR REHMAN</h1></center>
+ 
+<a href="https://wa.me/+923313435222" target="_blank"><button id="download-btn">WHATSAPP ME</button></a>
+  
+  <table>
+    <tr>
+      <th>NAME</th>
+      <td id="name">AQEEL OUR REHMAN</td>
+    </tr>
+    <tr>
+      <th>FATHER NAME</th>
+      <td id="father-name">MALIK MUHAMMAD TAYYAB SABIR</td>
+    </tr>
+    <tr>
+      <th>CNIC</th>
+      <td id="cnic">*****-*******-*</td>
+    </tr>
+     <tr>
+      <th>PHONE NUMBER</th>
+      <td id="phone-number">+923313435222</td>
+    </tr>
+    <tr>
+      <th>PROVINCE</th>
+      <td id="province">PUNJAB</td>
+    </tr>
+    <tr>
+      <th>DISTRICT</th>
+      <td id="district">UNKNOWN</td>
+    </tr>
+    <tr>
+      <th>CITY</th>
+      <td id="city">UNKNOWN</td>
+    </tr>
+    <tr>
+      <th>ADDRESS</th>
+      <td id="address">P/O BAHAWALPUR ALLAMA IQBAL TOWN BAHAW</td>
+    </tr>
+  </table>
+
+  <a id="download-btn" href="javascript:downloadPDF()" id="download-btn">Download PDF</a>
+
+   <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="https://shorturl.at/ekwQ1"target="blank">Sheezzi</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
+    </footer>
+
+    <!-- end footer section -->
+
+
+  <script>
+    // JavaScript to update the table with user input
+    function updateTable() {
+      var name = document.getElementById("name-input").value;
+      var cnic = document.getElementById("cnic-input").value;
+      var city = document.getElementById("city-input").value;
+      var phoneNumber = document.getElementById("phone-number-input").value;
+
+      document.getElementById("name").textContent = name;
+      document.getElementById("cnic").textContent = cnic;
+      document.getElementById("city").textContent = city;
+      document.getElementById("phone-number").textContent = phoneNumber;
+    }
+
+    // Attach event listeners to input fields
+    document.getElementById("name-input").addEventListener("input", updateTable);
+    document.getElementById("cnic-input").addEventListener("input", updateTable);
+    document.getElementById("city-input").addEventListener("input", updateTable);
+    document.getElementById("phone-number-input").addEventListener("input", updateTable);
+
+    // Function to download the PDF
+    function downloadPDF() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
